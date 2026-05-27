@@ -60,6 +60,45 @@ if (window.lucide && typeof window.lucide.createIcons === 'function') {
     if (y) y.textContent = new Date().getFullYear();
 })();
 
+// ============ Engineering principle icons ============
+(function () {
+    const principleIcons = {
+        'Design for failure': 'shield-alert',
+        'Domain-Driven Design first': 'boxes',
+        'Make incidents cheap': 'siren',
+        'Trunk-based development': 'git-branch',
+        'SLOs over uptime promises': 'gauge',
+        'Zero-trust by default': 'lock',
+        'Observability is not optional': 'radar',
+        'Boring tech wins': 'anchor',
+        'Document the why': 'book-open',
+        'Automate the toil': 'bot',
+        'Code reviews teach': 'graduation-cap',
+        'Test in production safely': 'flask-conical',
+        'APIs are forever': 'plug',
+        'Shift left on security': 'shield-check',
+        'Mentor relentlessly': 'sprout',
+        'Ship the smallest thing': 'rocket',
+    };
+
+    document.querySelectorAll('.tip-card').forEach(function (card) {
+        if (card.querySelector('.tip-icon')) return;
+        const titleEl = card.querySelector('.tip-title');
+        if (!titleEl) return;
+        const title = titleEl.textContent.replace(/\s+/g, ' ').trim();
+        const iconName = principleIcons[title];
+        if (!iconName) return;
+        const wrap = document.createElement('div');
+        wrap.className = 'tip-icon';
+        wrap.innerHTML = '<i data-lucide="' + iconName + '"></i>';
+        card.insertBefore(wrap, card.firstChild);
+    });
+
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+    }
+})();
+
 // ============ Tech-pill logos (Simple Icons CDN) ============
 (function () {
     // Pill text -> simpleicons slug (or array of fallback slugs).

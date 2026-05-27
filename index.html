@@ -51,8 +51,8 @@
     <!-- Navigation -->
     <header id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[min(95%,64rem)] transition-all">
         <nav class="flex items-center justify-between gap-4 px-4 py-3 rounded-2xl border border-black/5 dark:border-white/10 bg-white/60 dark:bg-neutral-900/60 backdrop-blur-xl shadow-lg shadow-black/5">
-            <a href="#home" class="flex items-center gap-2">
-                <span class="grid place-items-center h-9 w-9 rounded-xl bg-gradient-to-br from-brand-purple to-brand-orange text-white font-bold text-sm shadow-lg shadow-brand-purple/30">MJ</span>
+            <a href="#home" class="flex items-center gap-2.5 group">
+                <img src="assets/logo.svg" alt="Merlin Jose logo" class="h-9 w-9 rounded-xl shadow-lg shadow-brand-purple/30 group-hover:scale-105 transition-transform" />
                 <span class="hidden sm:block font-semibold tracking-tight">Merlin Jose</span>
             </a>
 
@@ -69,7 +69,7 @@
                     <i data-lucide="sun" class="h-4 w-4 hidden dark:block"></i>
                     <i data-lucide="moon" class="h-4 w-4 block dark:hidden"></i>
                 </button>
-                <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium px-3.5 py-2 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 hover:opacity-90 transition">
+                <a href="assets/Merlin_Jose_Resume.docx" download="Merlin_Jose_Resume.docx" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium px-3.5 py-2 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 hover:opacity-90 transition">
                     <i data-lucide="download" class="h-4 w-4"></i>
                     Download CV
                 </a>
@@ -704,7 +704,10 @@
 
     <footer class="border-t border-black/5 dark:border-white/5 mt-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
-            <div>© <span id="year"></span> Merlin Jose. Built with care in Dubai.</div>
+            <div class="flex items-center gap-3">
+                <img src="assets/logo.svg" alt="" class="h-8 w-8 rounded-lg" />
+                <span>© <span id="year"></span> Merlin Jose. Built with care in Dubai.</span>
+            </div>
             <div class="flex items-center gap-4">
                 <a href="#home" class="hover:text-brand-purple transition">Back to top</a>
                 <a href="https://www.linkedin.com/in/merlin-jose-b6a88739/" target="_blank" rel="noopener" class="hover:text-brand-purple transition">LinkedIn</a>
