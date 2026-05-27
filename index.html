@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Merlin Jose — Technical Lead with 15+ years building cloud-native platforms in .NET and Azure. Open to Software Development Manager, Technical Consultant, and CTO roles." />
+    <meta name="theme-color" content="#0a0a0a" />
+    <title>Merlin Jose | Technical Lead — Microservices & Cloud Platforms</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <link rel="apple-touch-icon" href="assets/logo.svg" />
+    <link rel="mask-icon" href="assets/logo.svg" color="#38bdf8" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+            },
+            colors: {
+              brand: {
+                purple: '#38bdf8',
+                orange: '#2563eb',
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="font-sans antialiased bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 transition-colors">
+
+    <!-- Background gradient orbs -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute -top-40 -left-40 h-[40rem] w-[40rem] rounded-full bg-brand-purple/20 blur-3xl"></div>
+        <div class="absolute top-1/3 -right-40 h-[35rem] w-[35rem] rounded-full bg-brand-orange/10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-1/3 h-[30rem] w-[30rem] rounded-full bg-brand-purple/10 blur-3xl"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[min(95%,64rem)] transition-all">
+        <nav class="flex items-center justify-between gap-4 px-4 py-3 rounded-2xl border border-black/5 dark:border-white/10 bg-white/60 dark:bg-neutral-900/60 backdrop-blur-xl shadow-lg shadow-black/5">
+            <a href="#home" class="flex items-center gap-2">
+                <span class="grid place-items-center h-9 w-9 rounded-xl bg-gradient-to-br from-brand-purple to-brand-orange text-white font-bold text-sm shadow-lg shadow-brand-purple/30">MJ</span>
+                <span class="hidden sm:block font-semibold tracking-tight">Merlin Jose</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-1 text-sm">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#stack" class="nav-link">Stack</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button id="theme-toggle" aria-label="Toggle theme" class="h-9 w-9 grid place-items-center rounded-xl border border-black/5 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/10 transition">
+                    <i data-lucide="sun" class="h-4 w-4 hidden dark:block"></i>
+                    <i data-lucide="moon" class="h-4 w-4 block dark:hidden"></i>
+                </button>
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium px-3.5 py-2 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 hover:opacity-90 transition">
+                    <i data-lucide="download" class="h-4 w-4"></i>
+                    Download CV
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- ============ HERO ============ -->
+        <section id="home" class="pt-32 sm:pt-40 pb-20 sm:pb-28">
+            <div class="reveal max-w-4xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/5 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur text-xs font-medium mb-6">
+                    <span class="relative flex h-2 w-2">
+                        <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    Open to <strong class="font-semibold">SDM</strong>, <strong class="font-semibold">Technical Consultant</strong> &amp; <strong class="font-semibold">CTO</strong> roles
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">
+                    <span class="gradient-text">Engineering Leader</span> | Microservices, Cloud Platforms &amp; AI Integration
+                </h1>
+
+                <p class="mt-6 text-base sm:text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl leading-relaxed">
+                    15+ years building cloud-native, domain-driven microservices and modern web platforms with
+                    <strong class="text-neutral-800 dark:text-neutral-200">.NET</strong> and
+                    <strong class="text-neutral-800 dark:text-neutral-200">Azure</strong>. I lead cross-functional
+                    engineering teams, design scalable distributed systems, run production workloads on AKS with
+                    robust CI/CD and GitOps, and ship AI-native features in production with Claude and OpenAI.
+                </p>
+
+                <div class="mt-7 flex flex-wrap items-center gap-2">
+                    <span class="role-pill"><i data-lucide="users" class="h-3.5 w-3.5"></i> Software Development Manager</span>
+                    <span class="role-pill"><i data-lucide="briefcase" class="h-3.5 w-3.5"></i> Technical Consultant</span>
+                    <span class="role-pill"><i data-lucide="compass" class="h-3.5 w-3.5"></i> CTO</span>
+                </div>
+
+                <div class="mt-7 flex flex-wrap items-center gap-3">
+                    <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-brand-purple to-brand-orange text-white font-semibold shadow-lg shadow-brand-purple/30 hover:shadow-xl hover:shadow-brand-purple/40 hover:-translate-y-0.5 transition">
+                        <i data-lucide="send" class="h-4 w-4"></i>
+                        Hire me
+                    </a>
+                    <a href="mailto:t.merlin72@gmail.com" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-black/10 dark:border-white/10 bg-white/50 dark:bg-white/5 hover:bg-white dark:hover:bg-white/10 font-semibold transition">
+                        <i data-lucide="mail" class="h-4 w-4"></i>
+                        Get in touch
+                    </a>
+                </div>
+
+                <div class="mt-8 flex items-center gap-5 text-neutral-500 dark:text-neutral-400">
+                    <a href="https://www.linkedin.com/in/merlin-jose-b6a88739/" target="_blank" rel="noopener" class="hover:text-brand-purple transition" aria-label="LinkedIn">
+                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.23 0z"/></svg>
+                    </a>
+                    <a href="mailto:t.merlin72@gmail.com" class="hover:text-brand-purple transition" aria-label="Email">
+                        <i data-lucide="mail" class="h-5 w-5"></i>
+                    </a>
+                    <a href="tel:+971543468481" class="hover:text-brand-purple transition" aria-label="Phone">
+                        <i data-lucide="phone" class="h-5 w-5"></i>
+                    </a>
+                    <div class="flex items-center gap-1.5 text-sm">
+                        <i data-lucide="map-pin" class="h-4 w-4"></i>
+                        Dubai, UAE
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SERVICES ============ -->
+        <section id="services" class="py-16 sm:py-24">
+            <div class="reveal mb-12">
+                <h2 class="section-title">Services</h2>
+                <p class="section-sub">Three engagements I take on most often — pick the one that fits.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5">
+                <article class="service-card reveal">
+                    <div class="service-icon"><i data-lucide="layout-template" class="h-5 w-5"></i></div>
+                    <h3 class="service-title">Technical Leadership &amp; Architecture</h3>
+                    <p class="service-desc">
+                        Leading engineering teams, defining microservice boundaries with DDD,
+                        setting PR/design-review standards, and owning end-to-end delivery
+                        across product, platform, and infra.
+                    </p>
+                    <a href="#contact" class="service-link">Learn more <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+                </article>
+
+                <article class="service-card reveal">
+                    <div class="service-icon"><i data-lucide="cloud-cog" class="h-5 w-5"></i></div>
+                    <h3 class="service-title">Cloud-Native Platform Engineering</h3>
+                    <p class="service-desc">
+                        Designing and running production .NET workloads on Azure / AKS — GitOps with
+                        Argo CD, blue-green &amp; canary deploys, autoscaling, secrets via Key Vault,
+                        and full-stack observability with OpenTelemetry, Prometheus, and Grafana.
+                    </p>
+                    <a href="#contact" class="service-link">Learn more <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+                </article>
+
+                <article class="service-card reveal">
+                    <div class="service-icon"><i data-lucide="sparkles" class="h-5 w-5"></i></div>
+                    <h3 class="service-title">AI Integration &amp; Modernization</h3>
+                    <p class="service-desc">
+                        Embedding LLMs into enterprise workflows with <strong>Claude</strong> and
+                        <strong>OpenAI</strong>, and shipping faster with AI-native tooling —
+                        <strong>Claude Code</strong>, <strong>Codex</strong>, and <strong>Cursor</strong>.
+                        Modernising legacy .NET applications and rebuilding monoliths as
+                        event-driven microservices without taking the business offline.
+                    </p>
+                    <a href="#contact" class="service-link">Learn more <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ PRINCIPLES MARQUEE ============ -->
+        <section id="principles" class="py-16 sm:py-24">
+            <div class="reveal mb-12 max-w-3xl">
+                <h2 class="section-title">Engineering Principles</h2>
+                <p class="section-sub">A handful of rules I keep returning to — earned the hard way.</p>
+            </div>
+
+            <div class="marquee-mask space-y-4">
+                <div class="marquee">
+                    <div class="marquee-track">
+                        <!-- 8 tips, duplicated for seamless loop -->
+                        <div class="tip-card">
+                            <div class="tip-title">Design for failure</div>
+                            <div class="tip-body">Every dependency will fail eventually. Build timeouts, retries, and circuit breakers from day one — not after the first incident.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Domain-Driven Design first</div>
+                            <div class="tip-body">Model the business, not the database. Bounded contexts keep services small, ownership clear, and changes local.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Make incidents cheap</div>
+                            <div class="tip-body">Runbooks before launches. Dashboards before alerts. The on-call engineer should never have to read the code to recover.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Trunk-based development</div>
+                            <div class="tip-body">Small batches, fast feedback. Long-lived branches are inventory — and inventory rots.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">SLOs over uptime promises</div>
+                            <div class="tip-body">Agree on what "good" looks like in measurable terms. Latency, error rate, freshness — then budget for it.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Zero-trust by default</div>
+                            <div class="tip-body">Never trust the network. OAuth2, JWT, service-to-service auth, Key Vault for secrets, least-privilege RBAC everywhere.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Observability is not optional</div>
+                            <div class="tip-body">Logs answer "what happened", metrics answer "is it bad", traces answer "where". You need all three.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Boring tech wins</div>
+                            <div class="tip-body">Choose proven over shiny. Innovation tokens are precious — spend them where they create real differentiation.</div>
+                        </div>
+                        <!-- duplicate -->
+                        <div class="tip-card">
+                            <div class="tip-title">Design for failure</div>
+                            <div class="tip-body">Every dependency will fail eventually. Build timeouts, retries, and circuit breakers from day one — not after the first incident.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Domain-Driven Design first</div>
+                            <div class="tip-body">Model the business, not the database. Bounded contexts keep services small, ownership clear, and changes local.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Make incidents cheap</div>
+                            <div class="tip-body">Runbooks before launches. Dashboards before alerts. The on-call engineer should never have to read the code to recover.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Trunk-based development</div>
+                            <div class="tip-body">Small batches, fast feedback. Long-lived branches are inventory — and inventory rots.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">SLOs over uptime promises</div>
+                            <div class="tip-body">Agree on what "good" looks like in measurable terms. Latency, error rate, freshness — then budget for it.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Zero-trust by default</div>
+                            <div class="tip-body">Never trust the network. OAuth2, JWT, service-to-service auth, Key Vault for secrets, least-privilege RBAC everywhere.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Observability is not optional</div>
+                            <div class="tip-body">Logs answer "what happened", metrics answer "is it bad", traces answer "where". You need all three.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Boring tech wins</div>
+                            <div class="tip-body">Choose proven over shiny. Innovation tokens are precious — spend them where they create real differentiation.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="marquee">
+                    <div class="marquee-track marquee-reverse-track">
+                        <div class="tip-card">
+                            <div class="tip-title">Document the why</div>
+                            <div class="tip-body">Code shows what; comments and ADRs show why. Future maintainers — including you — will thank you.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Automate the toil</div>
+                            <div class="tip-body">If you do it twice, automate it. Engineering time is too expensive to burn on manual repetition.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Code reviews teach</div>
+                            <div class="tip-body">Treat reviews as the team's daily learning loop, not a gate. Ask questions, share patterns, level everyone up.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Test in production safely</div>
+                            <div class="tip-body">Feature flags, dark launches, canaries. Synthetic and chaos tests in prod beat lab-perfect staging that lies.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">APIs are forever</div>
+                            <div class="tip-body">Versioning, contracts, and deprecation plans matter more than the first design. Treat the API like a public commitment.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Shift left on security</div>
+                            <div class="tip-body">SAST, DAST, IaC and dependency scanning belong in CI — not in a quarterly audit. OWASP-aligned by default.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Mentor relentlessly</div>
+                            <div class="tip-body">A team you grow is a team that ships. Pairing, design huddles, and brown-bags compound faster than headcount.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Ship the smallest thing</div>
+                            <div class="tip-body">The smallest change that's useful to the user. Optimise later — first prove the loop closes end to end.</div>
+                        </div>
+                        <!-- duplicate -->
+                        <div class="tip-card">
+                            <div class="tip-title">Document the why</div>
+                            <div class="tip-body">Code shows what; comments and ADRs show why. Future maintainers — including you — will thank you.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Automate the toil</div>
+                            <div class="tip-body">If you do it twice, automate it. Engineering time is too expensive to burn on manual repetition.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Code reviews teach</div>
+                            <div class="tip-body">Treat reviews as the team's daily learning loop, not a gate. Ask questions, share patterns, level everyone up.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Test in production safely</div>
+                            <div class="tip-body">Feature flags, dark launches, canaries. Synthetic and chaos tests in prod beat lab-perfect staging that lies.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">APIs are forever</div>
+                            <div class="tip-body">Versioning, contracts, and deprecation plans matter more than the first design. Treat the API like a public commitment.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Shift left on security</div>
+                            <div class="tip-body">SAST, DAST, IaC and dependency scanning belong in CI — not in a quarterly audit. OWASP-aligned by default.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Mentor relentlessly</div>
+                            <div class="tip-body">A team you grow is a team that ships. Pairing, design huddles, and brown-bags compound faster than headcount.</div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-title">Ship the smallest thing</div>
+                            <div class="tip-body">The smallest change that's useful to the user. Optimise later — first prove the loop closes end to end.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ EXPERIENCE ============ -->
+        <section id="experience" class="py-16 sm:py-24">
+            <div class="reveal mb-12">
+                <h2 class="section-title">Experience</h2>
+                <p class="section-sub">15+ years across enterprise platforms in e-commerce, ports, fleet, CRM, and HRMS.</p>
+            </div>
+
+            <div class="space-y-4">
+                <article class="reveal exp-row">
+                    <div class="exp-mark">K</div>
+                    <div class="exp-body">
+                        <div class="exp-head">
+                            <div>
+                                <h3 class="exp-row-role">Kinnarps Project Solutions L.L.C</h3>
+                                <div class="exp-row-sub">Software Development Lead · Dubai</div>
+                            </div>
+                            <span class="exp-row-date">Mar 2023 — Present</span>
+                        </div>
+                        <p class="exp-row-desc">Leading a team of 6 delivering KPS Mart, an AI-enabled e-commerce and enterprise platform — designing cloud-native solutions on Azure &amp; AWS, integrating OpenAI APIs, and enforcing architecture and engineering standards.</p>
+                    </div>
+                </article>
+
+                <article class="reveal exp-row">
+                    <div class="exp-mark">D</div>
+                    <div class="exp-body">
+                        <div class="exp-head">
+                            <div>
+                                <h3 class="exp-row-role">Dubai Technologies L.L.C</h3>
+                                <div class="exp-row-sub">Senior Software Developer / Technical Lead · Dubai</div>
+                            </div>
+                            <span class="exp-row-date">Apr 2018 — Mar 2023</span>
+                        </div>
+                        <p class="exp-row-desc">Led design and development of distributed enterprise systems in the port domain — RTLS (Real-Time Location System) and RORO (Roll-In/Roll-Out) — using .NET Core microservices, Angular, and Web APIs.</p>
+                    </div>
+                </article>
+
+                <article class="reveal exp-row">
+                    <div class="exp-mark">J</div>
+                    <div class="exp-body">
+                        <div class="exp-head">
+                            <div>
+                                <h3 class="exp-row-role">Jacobsons Direct Marketing L.L.C</h3>
+                                <div class="exp-row-sub">Software Developer · Dubai</div>
+                            </div>
+                            <span class="exp-row-date">Mar 2016 — Apr 2018</span>
+                        </div>
+                        <p class="exp-row-desc">Built the Freeways Incentive Management System for the fleet domain — scalable enterprise apps in AngularJS, ASP.NET Web API, and SQL Server.</p>
+                    </div>
+                </article>
+
+                <article class="reveal exp-row">
+                    <div class="exp-mark">T</div>
+                    <div class="exp-body">
+                        <div class="exp-head">
+                            <div>
+                                <h3 class="exp-row-role">Truebell Marketing &amp; Trading L.L.C</h3>
+                                <div class="exp-row-sub">Software Developer · Dubai</div>
+                            </div>
+                            <span class="exp-row-date">Aug 2013 — Mar 2016</span>
+                        </div>
+                        <p class="exp-row-desc">Delivered the FCA CRM application — C#, ASP.NET MVC, Web API, optimized SQL schemas/procedures, and SSRS reporting + ETL.</p>
+                    </div>
+                </article>
+
+                <article class="reveal exp-row">
+                    <div class="exp-mark">E</div>
+                    <div class="exp-body">
+                        <div class="exp-head">
+                            <div>
+                                <h3 class="exp-row-role">Extolution Software Pvt Ltd</h3>
+                                <div class="exp-row-sub">Software Programmer · India</div>
+                            </div>
+                            <span class="exp-row-date">Dec 2010 — Aug 2013</span>
+                        </div>
+                        <p class="exp-row-desc">Contributed to Exenta HRMS — enterprise web apps in C#, ASP.NET MVC, Web API, REST APIs, and SQL Server across the full SDLC.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ EDUCATION ============ -->
+        <section id="education" class="py-16 sm:py-24">
+            <div class="reveal mb-12 max-w-3xl">
+                <h2 class="section-title">Education</h2>
+                <p class="section-sub">Formal training that started it all.</p>
+            </div>
+
+            <article class="reveal edu-card">
+                <div class="edu-mark">A</div>
+                <div class="edu-body">
+                    <h3 class="edu-title">Bachelor of Engineering in Information Technology</h3>
+                    <div class="edu-org">Anna University</div>
+                    <p class="edu-desc">Four-year programme covering software engineering, distributed systems, databases, and web technologies — the foundation for everything since.</p>
+                </div>
+                <span class="edu-date">2006 — 2010</span>
+            </article>
+        </section>
+
+        <!-- ============ TECH STACK MARQUEE ============ -->
+        <section id="stack" class="py-16 sm:py-24">
+            <div class="reveal mb-12 max-w-3xl">
+                <h2 class="section-title">Technology Stack</h2>
+                <p class="section-sub">The technologies I work with day-to-day.</p>
+            </div>
+
+            <div class="marquee-mask space-y-4">
+                <div class="marquee">
+                    <div class="marquee-track">
+                        <span class="tech-pill">.NET Core</span>
+                        <span class="tech-pill">ASP.NET Core</span>
+                        <span class="tech-pill">C#</span>
+                        <span class="tech-pill">TypeScript</span>
+                        <span class="tech-pill">Angular</span>
+                        <span class="tech-pill">Node.js</span>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">REST</span>
+                        <span class="tech-pill">GraphQL</span>
+                        <span class="tech-pill">OpenAI API</span>
+                        <span class="tech-pill">.NET Core</span>
+                        <span class="tech-pill">ASP.NET Core</span>
+                        <span class="tech-pill">C#</span>
+                        <span class="tech-pill">TypeScript</span>
+                        <span class="tech-pill">Angular</span>
+                        <span class="tech-pill">Node.js</span>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">REST</span>
+                        <span class="tech-pill">GraphQL</span>
+                        <span class="tech-pill">OpenAI API</span>
+                    </div>
+                </div>
+
+                <div class="marquee">
+                    <div class="marquee-track marquee-reverse-track">
+                        <span class="tech-pill">Azure</span>
+                        <span class="tech-pill">AWS</span>
+                        <span class="tech-pill">AKS</span>
+                        <span class="tech-pill">Kubernetes</span>
+                        <span class="tech-pill">Docker</span>
+                        <span class="tech-pill">Helm</span>
+                        <span class="tech-pill">Argo CD</span>
+                        <span class="tech-pill">Flux</span>
+                        <span class="tech-pill">NGINX Ingress</span>
+                        <span class="tech-pill">Azure Key Vault</span>
+                        <span class="tech-pill">Azure</span>
+                        <span class="tech-pill">AWS</span>
+                        <span class="tech-pill">AKS</span>
+                        <span class="tech-pill">Kubernetes</span>
+                        <span class="tech-pill">Docker</span>
+                        <span class="tech-pill">Helm</span>
+                        <span class="tech-pill">Argo CD</span>
+                        <span class="tech-pill">Flux</span>
+                        <span class="tech-pill">NGINX Ingress</span>
+                        <span class="tech-pill">Azure Key Vault</span>
+                    </div>
+                </div>
+
+                <div class="marquee">
+                    <div class="marquee-track">
+                        <span class="tech-pill">Azure DevOps</span>
+                        <span class="tech-pill">GitHub Actions</span>
+                        <span class="tech-pill">Git</span>
+                        <span class="tech-pill">RabbitMQ</span>
+                        <span class="tech-pill">Kafka</span>
+                        <span class="tech-pill">Redis</span>
+                        <span class="tech-pill">OpenTelemetry</span>
+                        <span class="tech-pill">Prometheus</span>
+                        <span class="tech-pill">Grafana</span>
+                        <span class="tech-pill">ELK / OpenSearch</span>
+                        <span class="tech-pill">Azure DevOps</span>
+                        <span class="tech-pill">GitHub Actions</span>
+                        <span class="tech-pill">Git</span>
+                        <span class="tech-pill">RabbitMQ</span>
+                        <span class="tech-pill">Kafka</span>
+                        <span class="tech-pill">Redis</span>
+                        <span class="tech-pill">OpenTelemetry</span>
+                        <span class="tech-pill">Prometheus</span>
+                        <span class="tech-pill">Grafana</span>
+                        <span class="tech-pill">ELK / OpenSearch</span>
+                    </div>
+                </div>
+
+                <div class="marquee">
+                    <div class="marquee-track marquee-reverse-track">
+                        <span class="tech-pill">Azure SQL</span>
+                        <span class="tech-pill">PostgreSQL</span>
+                        <span class="tech-pill">SQL Server</span>
+                        <span class="tech-pill">MongoDB</span>
+                        <span class="tech-pill">OAuth2</span>
+                        <span class="tech-pill">JWT</span>
+                        <span class="tech-pill">Zero-Trust</span>
+                        <span class="tech-pill">DDD</span>
+                        <span class="tech-pill">Agile / Scrum</span>
+                        <span class="tech-pill">OWASP</span>
+                        <span class="tech-pill">Azure SQL</span>
+                        <span class="tech-pill">PostgreSQL</span>
+                        <span class="tech-pill">SQL Server</span>
+                        <span class="tech-pill">MongoDB</span>
+                        <span class="tech-pill">OAuth2</span>
+                        <span class="tech-pill">JWT</span>
+                        <span class="tech-pill">Zero-Trust</span>
+                        <span class="tech-pill">DDD</span>
+                        <span class="tech-pill">Agile / Scrum</span>
+                        <span class="tech-pill">OWASP</span>
+                    </div>
+                </div>
+
+                <!-- AI tools row -->
+                <div class="marquee">
+                    <div class="marquee-track">
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>Claude Code</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>Claude (Anthropic)</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>OpenAI API</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>GPT-4 / GPT-4o</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>Codex</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>Cursor</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>GitHub Copilot</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>ChatGPT</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>Embeddings &amp; RAG</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>Prompt Engineering</span>
+                        <!-- duplicate for seamless loop -->
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>Claude Code</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>Claude (Anthropic)</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>OpenAI API</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>GPT-4 / GPT-4o</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>Codex</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>Cursor</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>GitHub Copilot</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>ChatGPT</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>Embeddings &amp; RAG</span>
+                        <span class="tech-pill tech-pill-ai"><span class="ai-dot"></span>Prompt Engineering</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROJECTS ============ -->
+        <section id="projects" class="py-16 sm:py-24">
+            <div class="reveal mb-12 flex flex-wrap items-end justify-between gap-4">
+                <div class="max-w-2xl">
+                    <h2 class="section-title">Latest Projects</h2>
+                    <p class="section-sub">Selected platforms I've led or built — across e-commerce, ports, fleet, CRM, and HRMS.</p>
+                </div>
+                <a href="https://www.linkedin.com/in/merlin-jose-b6a88739/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-purple hover:underline">
+                    All projects on LinkedIn <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5">
+                <article class="reveal project-card">
+                    <div class="project-cover project-cover-1">
+                        <img class="project-img" loading="lazy" alt="E-commerce storefront preview" src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1200&h=600&q=80" />
+                        <span class="project-tag">AI · E-Commerce</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">KPS Mart — AI-Enabled E-Commerce Platform</h3>
+                        <p class="project-desc">A multi-tenant e-commerce and enterprise platform for Kinnarps. Designed cloud-native services on Azure &amp; AWS, integrated OpenAI for automation, and led a team of 6 to deliver and run it in production.</p>
+                        <div class="project-tech">
+                            <span class="project-pill">.NET Core</span>
+                            <span class="project-pill">Angular</span>
+                            <span class="project-pill">Node.js</span>
+                            <span class="project-pill">Python</span>
+                            <span class="project-pill">Azure</span>
+                            <span class="project-pill">OpenAI</span>
+                            <span class="project-pill">MongoDB</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="reveal project-card">
+                    <div class="project-cover project-cover-2">
+                        <img class="project-img" loading="lazy" alt="Port container terminal with real-time tracking" src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1200&h=600&q=80" />
+                        <span class="project-tag">Distributed · IoT</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">RTLS — Real-Time Location System</h3>
+                        <p class="project-desc">Port-domain platform tracking assets and people across terminals in real time. Distributed .NET Core microservices, event-driven backbones, and an Angular operations console.</p>
+                        <div class="project-tech">
+                            <span class="project-pill">.NET Core</span>
+                            <span class="project-pill">Microservices</span>
+                            <span class="project-pill">Angular</span>
+                            <span class="project-pill">TypeScript</span>
+                            <span class="project-pill">SQL Server</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="reveal project-card">
+                    <div class="project-cover project-cover-3">
+                        <img class="project-img" loading="lazy" alt="Vehicles awaiting roll-on roll-off shipment" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&h=600&q=80" />
+                        <span class="project-tag">Port Operations</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">RORO — Roll-In / Roll-Out System</h3>
+                        <p class="project-desc">Logistics orchestration for vehicle roll-in / roll-out operations at ports. REST APIs, workflow engines, and reliability hardening to keep terminals moving.</p>
+                        <div class="project-tech">
+                            <span class="project-pill">.NET Core</span>
+                            <span class="project-pill">Web API</span>
+                            <span class="project-pill">REST</span>
+                            <span class="project-pill">PostgreSQL</span>
+                            <span class="project-pill">SQL Server</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="reveal project-card">
+                    <div class="project-cover project-cover-4">
+                        <img class="project-img" loading="lazy" alt="Trucks on highway representing fleet management" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&h=600&q=80" />
+                        <span class="project-tag">Fleet · Incentives</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Freeways — Incentive Management System</h3>
+                        <p class="project-desc">Fleet incentive programme with reporting, calculations, and back-office integration. AngularJS front-end with an ASP.NET Web API service tier on SQL Server.</p>
+                        <div class="project-tech">
+                            <span class="project-pill">AngularJS</span>
+                            <span class="project-pill">ASP.NET Web API</span>
+                            <span class="project-pill">REST</span>
+                            <span class="project-pill">SQL Server</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="reveal project-card md:col-span-2">
+                    <div class="project-cover project-cover-5">
+                        <img class="project-img" loading="lazy" alt="CRM dashboard with analytics" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&h=600&q=80" />
+                        <span class="project-tag">CRM · Reporting</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">FCA — CRM Application</h3>
+                        <p class="project-desc">CRM platform with custom workflows, SSRS reporting, and ETL pipelines. Designed schemas, stored procedures, and reports; tuned query performance across the application.</p>
+                        <div class="project-tech">
+                            <span class="project-pill">C#</span>
+                            <span class="project-pill">ASP.NET MVC</span>
+                            <span class="project-pill">Web API</span>
+                            <span class="project-pill">SQL Server</span>
+                            <span class="project-pill">SSRS</span>
+                            <span class="project-pill">ETL</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section id="contact" class="py-16 sm:py-24">
+            <div class="reveal text-center mb-12 max-w-2xl mx-auto">
+                <h2 class="section-title">Let's build something solid</h2>
+                <p class="section-sub mx-auto">Actively exploring <strong class="text-neutral-800 dark:text-neutral-200">Software Development Manager</strong>, <strong class="text-neutral-800 dark:text-neutral-200">Technical Consultant</strong>, and <strong class="text-neutral-800 dark:text-neutral-200">CTO</strong> roles — full-time, fractional, or consulting engagements welcome.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <a href="mailto:t.merlin72@gmail.com" class="contact-card reveal">
+                    <i data-lucide="mail" class="contact-icon"></i>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">t.merlin72@gmail.com</div>
+                </a>
+                <a href="tel:+971543468481" class="contact-card reveal">
+                    <i data-lucide="phone" class="contact-icon"></i>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value">+971 54 346 8481</div>
+                </a>
+                <a href="https://www.linkedin.com/in/merlin-jose-b6a88739/" target="_blank" rel="noopener" class="contact-card reveal">
+                    <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.23 0z"/></svg>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value">merlin-jose</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-black/5 dark:border-white/5 mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
+            <div>© <span id="year"></span> Merlin Jose. Built with care in Dubai.</div>
+            <div class="flex items-center gap-4">
+                <a href="#home" class="hover:text-brand-purple transition">Back to top</a>
+                <a href="https://www.linkedin.com/in/merlin-jose-b6a88739/" target="_blank" rel="noopener" class="hover:text-brand-purple transition">LinkedIn</a>
+                <a href="mailto:t.merlin72@gmail.com" class="hover:text-brand-purple transition">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

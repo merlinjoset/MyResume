@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Merlin Jose logo">
+  <defs>
+    <linearGradient id="mj-bg" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="mj-shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background with gradient -->
+  <rect width="200" height="200" rx="44" fill="url(#mj-bg)"/>
+  <!-- Subtle top-light shine for depth -->
+  <rect width="200" height="200" rx="44" fill="url(#mj-shine)"/>
+
+  <!-- Custom-drawn "MJ" monogram -->
+  <g fill="#ffffff">
+    <!-- M: 5-vertex chevron, geometric and bold -->
+    <path d="M40 150
+             L40 50
+             L60 50
+             L86 96
+             L112 50
+             L132 50
+             L132 150
+             L114 150
+             L114 84
+             L94 120
+             L78 120
+             L58 84
+             L58 150 Z"/>
+
+    <!-- J: vertical stem with curved hook descending and turning left -->
+    <path d="M145 50
+             L165 50
+             L165 122
+             C165 144 152 158 132 158
+             C118 158 106 151 100 138
+             L116 128
+             C119 135 124 140 132 140
+             C140 140 145 134 145 124
+             Z"/>
+  </g>
+</svg>
