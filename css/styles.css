@@ -562,6 +562,13 @@ html:not(.dark) .tech-pill img[src*="openai"] {
     opacity: 0.85;
     transform: scale(1.04);
 }
+/* Feature variant: the image is the real product hero — let it dominate, soft tint only */
+.project-img.project-img-feature {
+    opacity: 0.92 !important;
+}
+.project-card:hover .project-img.project-img-feature {
+    opacity: 1 !important;
+}
 .project-cover::after {
     content: '';
     position: absolute;
