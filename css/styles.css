@@ -249,6 +249,30 @@ body { -webkit-font-smoothing: antialiased; }
     font-weight: 800;
     font-size: 1.1rem;
 }
+/* Image-based experience mark — independent of .exp-mark to avoid display:grid issues */
+img.exp-logo {
+    display: block !important;
+    flex: 0 0 auto;
+    width: 3rem !important;
+    min-width: 3rem !important;
+    height: 3rem !important;
+    border-radius: 0.85rem;
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.96);
+    padding: 0.3rem;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+}
+.dark img.exp-logo { border-color: rgba(255, 255, 255, 0.12); }
+
+/* Variant for wide horizontal wordmarks (e.g. Dubai Technologies, Jacobsons) */
+img.exp-logo.exp-logo-wide {
+    width: 5rem !important;
+    min-width: 5rem !important;
+    height: 3rem !important;
+    border-radius: 0.6rem;
+    padding: 0.35rem 0.5rem;
+}
 .dark .exp-mark { color: #2563eb; }
 .exp-body { flex: 1; min-width: 0; }
 .exp-head {
@@ -318,6 +342,30 @@ body { -webkit-font-smoothing: antialiased; }
     font-weight: 800;
     font-size: 1.25rem;
     box-shadow: 0 10px 25px -10px rgba(56, 189, 248, 0.5);
+}
+.edu-logo {
+    flex-shrink: 0;
+    height: 3.25rem;
+    width: auto;
+    max-width: 16rem;
+    object-fit: contain;
+    border-radius: 0.6rem;
+    padding: 0.45rem 0.75rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 25px -12px rgba(0, 0, 0, 0.25);
+}
+.edu-logo-square {
+    width: 3.625rem;     /* 58px outer box: 50px image + 8px padding for crisp 1:1 render */
+    height: 3.625rem;
+    max-width: 3.625rem;
+    padding: 0.25rem;
+    border-radius: 0.85rem;
+    image-rendering: -webkit-optimize-contrast;
+}
+.dark .edu-logo {
+    background-color: rgba(255, 255, 255, 0.96);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 .edu-body { flex: 1; position: relative; }
 .edu-title { font-size: 1.15rem; font-weight: 700; }
