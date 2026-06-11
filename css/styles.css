@@ -283,7 +283,36 @@ img.exp-logo.exp-logo-wide {
     gap: 0.5rem;
     margin-bottom: 0.4rem;
 }
-.exp-row-role { font-size: 1.05rem; font-weight: 700; }
+.exp-row-role {
+    font-size: 1.05rem;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+.exp-row-link {
+    background: linear-gradient(135deg, #38bdf8, #2563eb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: opacity 0.2s ease;
+}
+.exp-row-link:hover { opacity: 0.85; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.6); text-underline-offset: 4px; }
+.exp-row-tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(37, 99, 235, 0.18));
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
 .exp-row-sub {
     font-size: 0.85rem;
     color: rgb(82 82 82);
@@ -642,6 +671,32 @@ html:not(.dark) .tech-pill img[src*="openai"] {
 .project-cover-3 { background: linear-gradient(135deg, #2563eb 0%, #ea580c 60%, #2c0f01 100%); }
 .project-cover-4 { background: linear-gradient(135deg, #10b981 0%, #047857 60%, #022c22 100%); }
 .project-cover-5 { background: linear-gradient(135deg, #ec4899 0%, #38bdf8 50%, #0c1e3a 100%); }
+.project-cover-jfl { background: linear-gradient(135deg, #f59e0b 0%, #b45309 55%, #422006 100%); }
+.project-tag-freelance {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.95), rgba(37, 99, 235, 0.95));
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.project-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+}
+.project-title-row .project-title { margin-bottom: 0; }
+.project-live-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #38bdf8;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+.project-live-link:hover { opacity: 0.8; text-decoration: underline; text-underline-offset: 3px; }
 .project-tag {
     position: relative;
     z-index: 1;
