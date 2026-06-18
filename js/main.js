@@ -54,6 +54,140 @@ if (window.lucide && typeof window.lucide.createIcons === 'function') {
     targets.forEach(function (el) { observer.observe(el); });
 })();
 
+// ============ Contact form ============
+(function () {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    const note = document.getElementById('contact-form-note');
+    const RECIPIENT = 't.merlin72@gmail.com';
+
+    function setNote(text, type) {
+        if (!note) return;
+        note.textContent = text || '';
+        note.classList.remove('is-error', 'is-success');
+        if (type) note.classList.add('is-' + type);
+    }
+
+    function validate(data) {
+        const errors = {};
+        if (!data.name || data.name.trim().length < 2) errors.name = 'Tell me your name';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email || '')) errors.email = 'A reachable email please';
+        if (!data.phone || data.phone.replace(/\D/g, '').length < 7) errors.phone = 'A working number please';
+        if (!data.idea || data.idea.trim().length < 12) errors.idea = 'A sentence or two about the idea';
+        return errors;
+    }
+
+    async function copyToClipboard(text) {
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(text);
+                return true;
+            }
+            // Fallback for non-HTTPS / older browsers
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            const ok = document.execCommand('copy');
+            document.body.removeChild(ta);
+            return ok;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    const ready      = document.getElementById('contact-ready');
+    const gmailLink  = document.getElementById('contact-gmail');
+    const mailtoLink = document.getElementById('contact-mailto');
+    const copyBtn    = document.getElementById('contact-copy');
+    const preview    = document.getElementById('contact-preview');
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const data = {
+            name:  form.elements['name'].value.trim(),
+            email: form.elements['email'].value.trim(),
+            phone: form.elements['phone'].value.trim(),
+            idea:  form.elements['idea'].value.trim(),
+        };
+
+        const errors = validate(data);
+        ['name', 'email', 'phone', 'idea'].forEach(function (k) {
+            form.elements[k].classList.toggle('invalid', !!errors[k]);
+        });
+
+        if (Object.keys(errors).length) {
+            const first = Object.keys(errors)[0];
+            setNote('Please fill in ' + first + ' — ' + errors[first].toLowerCase() + '.', 'error');
+            form.elements[first].focus();
+            return;
+        }
+
+        setNote('');
+
+        const subject = 'Idea from ' + data.name + ' — portfolio inquiry';
+        const body =
+            'Hi Merlin,\n\n' +
+            data.idea + '\n\n' +
+            '— ' + data.name + '\n' +
+            'Email: ' + data.email + '\n' +
+            'Phone: ' + data.phone + '\n';
+        const fullForClipboard =
+            'To: ' + RECIPIENT + '\n' +
+            'Subject: ' + subject + '\n\n' +
+            body;
+
+        // 1) Wire the action buttons to real URLs that work in any environment
+        const enc = encodeURIComponent;
+        const gmailUrl  = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1' +
+                          '&to='   + enc(RECIPIENT) +
+                          '&su='   + enc(subject) +
+                          '&body=' + enc(body);
+        const mailtoUrl = 'mailto:' + enc(RECIPIENT) +
+                          '?subject=' + enc(subject) +
+                          '&body='    + enc(body);
+
+        gmailLink.href  = gmailUrl;
+        mailtoLink.href = mailtoUrl;
+        preview.textContent = fullForClipboard;
+
+        // 2) Auto-copy to clipboard so a paste works anywhere
+        const copied = await copyToClipboard(fullForClipboard);
+
+        // 3) Reveal the ready-to-send panel
+        ready.hidden = false;
+        if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
+        // Smooth scroll to the ready panel so it's never missed
+        ready.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        setNote(
+            copied
+                ? 'Message ready — copied to clipboard. Pick your send method below.'
+                : 'Message ready below — pick how to send.',
+            'success'
+        );
+
+        // 4) Wire the inline copy button to copy on demand and confirm
+        copyBtn.onclick = async function () {
+            const ok = await copyToClipboard(fullForClipboard);
+            const orig = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i data-lucide="' + (ok ? 'check' : 'x') + '" class="h-4 w-4"></i><span>' + (ok ? 'Copied' : 'Press Ctrl+C') + '</span>';
+            if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
+            setTimeout(function () {
+                copyBtn.innerHTML = orig;
+                if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
+            }, 1800);
+        };
+    });
+
+    /* Live-clear the invalid state once the user starts typing again */
+    form.addEventListener('input', function (e) {
+        if (e.target.classList.contains('invalid')) e.target.classList.remove('invalid');
+    });
+})();
+
 // ============ Year ============
 (function () {
     const y = document.getElementById('year');

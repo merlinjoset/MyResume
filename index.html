@@ -360,6 +360,249 @@
                 <p class="section-sub">15+ years across enterprise platforms in e-commerce, ports, fleet, CRM, and HRMS.</p>
             </div>
 
+            <!-- Neon-style career-timeline visualization -->
+            <div class="reveal career-timeline-wrap" aria-hidden="true">
+                <div class="career-timeline-frame">
+                    <svg class="career-timeline-svg" viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="prodLine" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0" stop-color="rgba(34, 197, 94, 0.15)"/>
+                                <stop offset="0.08" stop-color="rgba(34, 197, 94, 0.85)"/>
+                                <stop offset="0.92" stop-color="rgba(56, 189, 248, 0.85)"/>
+                                <stop offset="1" stop-color="rgba(56, 189, 248, 0.25)"/>
+                            </linearGradient>
+                            <radialGradient id="dotGlow" cx="0.5" cy="0.5" r="0.5">
+                                <stop offset="0" stop-color="rgba(74, 222, 128, 0.6)"/>
+                                <stop offset="1" stop-color="rgba(74, 222, 128, 0)"/>
+                            </radialGradient>
+                            <!-- Comet trail (fades from bright at the bead, transparent at the tail) -->
+                            <linearGradient id="beadTrail" x1="1" y1="0" x2="0" y2="0">
+                                <stop offset="0"   stop-color="rgba(167, 243, 208, 0.85)"/>
+                                <stop offset="0.3" stop-color="rgba(74,  222, 128, 0.55)"/>
+                                <stop offset="1"   stop-color="rgba(74,  222, 128, 0)"/>
+                            </linearGradient>
+                            <linearGradient id="jflBeadTrail" x1="1" y1="0" x2="0" y2="0">
+                                <stop offset="0"   stop-color="rgba(186, 230, 253, 0.85)"/>
+                                <stop offset="0.3" stop-color="rgba(56,  189, 248, 0.55)"/>
+                                <stop offset="1"   stop-color="rgba(56,  189, 248, 0)"/>
+                            </linearGradient>
+
+                            <!-- INVISIBLE career path — single continuous curved wave tracing
+                                 production → up Extolution → down → up Truebell → … → Kinnarps live.
+                                 Each transition is a cubic Bezier with horizontal tangents at both ends,
+                                 so the bead glides through smooth curves instead of sharp corners. -->
+                            <path id="careerPath" fill="none" stroke="none"
+                                  d="M 40 200
+                                     L 60 200
+                                     C 80 200, 80 130, 100 130
+                                     L 234 130
+                                     C 244 130, 244 200, 254 200
+                                     C 274 200, 274 110, 294 110
+                                     L 401 110
+                                     C 411 110, 411 200, 421 200
+                                     C 441 200, 441 90, 461 90
+                                     L 533 90
+                                     C 543 90, 543 200, 553 200
+                                     C 573 200, 573 130, 593 130
+                                     L 862 130
+                                     C 872 130, 872 200, 882 200
+                                     C 902 200, 902 110, 922 110
+                                     L 1140 110" />
+
+                            <!-- INVISIBLE freelance fork — a second bead splits off the production line
+                                 at the JFL fork (x=1010) and curves DOWN to Jose For Land while
+                                 the main bead continues forward on Kinnarps. -->
+                            <path id="jflPath" fill="none" stroke="none"
+                                  d="M 1010 200
+                                     C 1030 200, 1030 290, 1050 290
+                                     L 1140 290" />
+                        </defs>
+
+                        <!-- Faint vertical year ticks -->
+                        <g class="ct-ticks">
+                            <line x1="60"   y1="0" x2="60"   y2="360" />
+                            <line x1="130"  y1="0" x2="130"  y2="360" />
+                            <line x1="200"  y1="0" x2="200"  y2="360" />
+                            <line x1="270"  y1="0" x2="270"  y2="360" />
+                            <line x1="340"  y1="0" x2="340"  y2="360" />
+                            <line x1="410"  y1="0" x2="410"  y2="360" />
+                            <line x1="480"  y1="0" x2="480"  y2="360" />
+                            <line x1="550"  y1="0" x2="550"  y2="360" />
+                            <line x1="620"  y1="0" x2="620"  y2="360" />
+                            <line x1="690"  y1="0" x2="690"  y2="360" />
+                            <line x1="760"  y1="0" x2="760"  y2="360" />
+                            <line x1="830"  y1="0" x2="830"  y2="360" />
+                            <line x1="900"  y1="0" x2="900"  y2="360" />
+                            <line x1="970"  y1="0" x2="970"  y2="360" />
+                            <line x1="1040" y1="0" x2="1040" y2="360" />
+                            <line x1="1110" y1="0" x2="1110" y2="360" />
+                        </g>
+
+                        <!-- Year labels along bottom -->
+                        <g class="ct-year-labels">
+                            <text x="60"   y="350">2010</text>
+                            <text x="270"  y="350">2013</text>
+                            <text x="480"  y="350">2016</text>
+                            <text x="620"  y="350">2018</text>
+                            <text x="970"  y="350">2023</text>
+                            <text x="1135" y="350">Present</text>
+                        </g>
+
+                        <!-- Vertical event connectors (dashed lines from branch to label) -->
+                        <g class="ct-connectors">
+                            <line x1="100"  y1="130" x2="100"  y2="78"  class="ct-conn ct-anim-fade ct-d-extolution-start" />
+                            <line x1="234"  y1="130" x2="234"  y2="78"  class="ct-conn ct-anim-fade ct-d-extolution-end" />
+                            <line x1="294"  y1="110" x2="294"  y2="62"  class="ct-conn ct-anim-fade ct-d-truebell-start" />
+                            <line x1="401"  y1="110" x2="401"  y2="62"  class="ct-conn ct-anim-fade ct-d-truebell-end" />
+                            <line x1="461"  y1="90"  x2="461"  y2="46"  class="ct-conn ct-anim-fade ct-d-jacobsons-start" />
+                            <line x1="533"  y1="90"  x2="533"  y2="46"  class="ct-conn ct-anim-fade ct-d-jacobsons-end" />
+                            <line x1="593"  y1="130" x2="593"  y2="78"  class="ct-conn ct-anim-fade ct-d-dubai-start" />
+                            <line x1="862"  y1="130" x2="862"  y2="78"  class="ct-conn ct-anim-fade ct-d-dubai-end" />
+                            <line x1="922"  y1="110" x2="922"  y2="62"  class="ct-conn ct-anim-fade ct-d-kinnarps-start" />
+                            <line x1="1050" y1="290" x2="1050" y2="332" class="ct-conn ct-anim-fade ct-d-jfl-start" />
+                        </g>
+
+                        <!-- Production / Career main line -->
+                        <path class="ct-prod-line" pathLength="100" d="M 40 200 L 1160 200" stroke="url(#prodLine)" fill="none" />
+
+                        <!-- ===== Curved-wave employment branches (Neon-style smooth Beziers) ===== -->
+
+                        <!-- Extolution (2010-12 → 2013-08): S-curve up, horizontal, S-curve down -->
+                        <path class="ct-branch ct-anim-branch ct-b-extolution" pathLength="100"
+                              d="M 60 200 C 80 200, 80 130, 100 130 L 234 130 C 244 130, 244 200, 254 200" />
+                        <circle class="ct-dot ct-dot-start ct-anim-fade ct-d-extolution-start" cx="100" cy="130" r="5" />
+                        <g class="ct-check ct-anim-fade ct-d-extolution-end" transform="translate(234 130)">
+                            <circle r="7" />
+                            <path d="M -3 0 L -0.5 2.5 L 3.5 -2" />
+                        </g>
+
+                        <!-- Truebell (2013-08 → 2016-03) -->
+                        <path class="ct-branch ct-anim-branch ct-b-truebell" pathLength="100"
+                              d="M 254 200 C 274 200, 274 110, 294 110 L 401 110 C 411 110, 411 200, 421 200" />
+                        <circle class="ct-dot ct-dot-start ct-anim-fade ct-d-truebell-start" cx="294" cy="110" r="5" />
+                        <g class="ct-check ct-anim-fade ct-d-truebell-end" transform="translate(401 110)">
+                            <circle r="7" />
+                            <path d="M -3 0 L -0.5 2.5 L 3.5 -2" />
+                        </g>
+
+                        <!-- Jacobsons (2016-03 → 2018-04) -->
+                        <path class="ct-branch ct-anim-branch ct-b-jacobsons" pathLength="100"
+                              d="M 421 200 C 441 200, 441 90, 461 90 L 533 90 C 543 90, 543 200, 553 200" />
+                        <circle class="ct-dot ct-dot-start ct-anim-fade ct-d-jacobsons-start" cx="461" cy="90" r="5" />
+                        <g class="ct-check ct-anim-fade ct-d-jacobsons-end" transform="translate(533 90)">
+                            <circle r="7" />
+                            <path d="M -3 0 L -0.5 2.5 L 3.5 -2" />
+                        </g>
+
+                        <!-- Dubai Technologies (2018-04 → 2023-03) -->
+                        <path class="ct-branch ct-anim-branch ct-b-dubai" pathLength="100"
+                              d="M 553 200 C 573 200, 573 130, 593 130 L 862 130 C 872 130, 872 200, 882 200" />
+                        <circle class="ct-dot ct-dot-start ct-anim-fade ct-d-dubai-start" cx="593" cy="130" r="5" />
+                        <g class="ct-check ct-anim-fade ct-d-dubai-end" transform="translate(862 130)">
+                            <circle r="7" />
+                            <path d="M -3 0 L -0.5 2.5 L 3.5 -2" />
+                        </g>
+
+                        <!-- Kinnarps (2023-03 → Present) ongoing — open-ended -->
+                        <path class="ct-branch ct-branch-live ct-anim-branch ct-b-kinnarps" pathLength="100"
+                              d="M 882 200 C 902 200, 902 110, 922 110 L 1140 110" />
+                        <circle class="ct-dot ct-dot-start ct-anim-fade ct-d-kinnarps-start" cx="922" cy="110" r="5" />
+                        <circle class="ct-dot ct-dot-live  ct-anim-fade ct-d-kinnarps-live" cx="1140" cy="110" r="6" />
+
+                        <!-- ===== Lower branch (freelance) ===== -->
+
+                        <!-- Jose For Land (2024 → Present): mirror curve going DOWN -->
+                        <path class="ct-branch ct-branch-live ct-branch-freelance ct-anim-branch ct-b-jfl" pathLength="100"
+                              d="M 1010 200 C 1030 200, 1030 290, 1050 290 L 1140 290" />
+                        <circle class="ct-dot ct-dot-start ct-dot-freelance ct-anim-fade ct-d-jfl-start" cx="1050" cy="290" r="5" />
+                        <circle class="ct-dot ct-dot-live  ct-dot-freelance ct-anim-fade ct-d-jfl-live"  cx="1140" cy="290" r="6" />
+
+                        <!-- Light bead that follows the actual career journey path. -->
+                        <g class="ct-playhead">
+                            <!-- Compact glowing trail (small + tight so it stays smooth through curves) -->
+                            <ellipse class="ct-playhead-trail" cx="-9" cy="0" rx="16" ry="4" fill="url(#beadTrail)" />
+                            <!-- The bright comet bead -->
+                            <circle class="ct-playhead-outer" cx="0" cy="0" r="14" fill="rgba(74,222,128,0.18)" />
+                            <circle class="ct-playhead-mid"   cx="0" cy="0" r="8"  fill="rgba(74,222,128,0.5)" />
+                            <circle class="ct-playhead-core"  cx="0" cy="0" r="4.5" fill="#f0fdf4" stroke="#4ade80" stroke-width="1.5" />
+                            <animateMotion dur="14s" repeatCount="indefinite" rotate="auto"
+                                           keyTimes="0; 0.92; 1" keyPoints="0; 1; 1" calcMode="linear">
+                                <mpath xlink:href="#careerPath" />
+                            </animateMotion>
+                        </g>
+
+                        <!-- Second bead — splits off down to Jose For Land when main bead reaches Kinnarps.
+                             keyTimes/keyPoints holds it invisible until t≈11s, then animates to JFL live edge.
+                             Cyan to match the freelance branch. -->
+                        <g class="ct-playhead ct-playhead-jfl">
+                            <ellipse class="ct-playhead-trail ct-playhead-trail-jfl" cx="-9" cy="0" rx="16" ry="4" fill="url(#jflBeadTrail)" />
+                            <circle class="ct-playhead-outer" cx="0" cy="0" r="14" fill="rgba(56,189,248,0.18)" />
+                            <circle class="ct-playhead-mid"   cx="0" cy="0" r="8"  fill="rgba(56,189,248,0.5)" />
+                            <circle class="ct-playhead-core ct-playhead-core-jfl" cx="0" cy="0" r="4.5" fill="#f0f9ff" stroke="#38bdf8" stroke-width="1.5" />
+                            <animateMotion dur="14s" repeatCount="indefinite" rotate="auto"
+                                           keyTimes="0; 0.807; 0.96; 1"
+                                           keyPoints="0; 0; 1; 1" calcMode="linear">
+                                <mpath xlink:href="#jflPath" />
+                            </animateMotion>
+                            <animate attributeName="opacity"
+                                     dur="14s" repeatCount="indefinite"
+                                     values="0; 0; 1; 1; 0; 0"
+                                     keyTimes="0; 0.806; 0.825; 0.96; 0.985; 1" />
+                        </g>
+                    </svg>
+
+                    <!-- HTML overlay for company pills + event labels -->
+                    <div class="ct-overlay">
+                        <!-- Upper pills -->
+                        <div class="ct-pill ct-anim-pop ct-p-extolution" style="left: 8.65%; top: 31%;">
+                            <img src="assets/extolution-logo.jpg" alt="" /><span>extolution</span>
+                        </div>
+                        <div class="ct-pill ct-anim-pop ct-p-truebell" style="left: 24.5%; top: 25%;">
+                            <img src="assets/truebell-logo.jpg" alt="" /><span>truebell</span>
+                        </div>
+                        <div class="ct-pill ct-anim-pop ct-p-jacobsons" style="left: 38.7%; top: 19%;">
+                            <img src="assets/jacobsons-logo.png" alt="" /><span>jacobsons</span>
+                        </div>
+                        <div class="ct-pill ct-anim-pop ct-p-dubai" style="left: 50%; top: 31%;">
+                            <img src="assets/dubai-technologies-logo.png" alt="" /><span>dubai-technologies</span>
+                        </div>
+                        <div class="ct-pill ct-pill-live ct-anim-pop ct-p-kinnarps" style="left: 78%; top: 25%;">
+                            <img src="assets/kinnarps-logo.png" alt="" /><span>kinnarps</span><em class="ct-live-badge">● live</em>
+                        </div>
+                        <!-- Lower pill (freelance) -->
+                        <div class="ct-pill ct-pill-live ct-pill-freelance ct-anim-pop ct-p-jfl" style="left: 85%; top: 73%;">
+                            <img src="assets/joseforland-logo.png" alt="" /><span>jose-for-land</span><em class="ct-live-badge">● live</em>
+                        </div>
+
+                        <!-- Event labels (dashed-line hangers under each dot) -->
+                        <div class="ct-event ct-event-top    ct-anim-fade-html ct-e-extolution-start" style="left: 8.3%;">  joined </div>
+                        <div class="ct-event ct-event-top    ct-anim-fade-html ct-e-extolution-end"   style="left: 19.5%;"> left   </div>
+                        <div class="ct-event ct-event-top    ct-anim-fade-html ct-e-truebell-start"   style="left: 24.5%;"> joined </div>
+                        <div class="ct-event ct-event-top    ct-anim-fade-html ct-e-truebell-end"     style="left: 33.4%;"> left   </div>
+                        <div class="ct-event ct-event-top    ct-anim-fade-html ct-e-jacobsons-start"  style="left: 38.4%;"> joined </div>
+                        <div class="ct-event ct-event-top    ct-anim-fade-html ct-e-jacobsons-end"    style="left: 44.4%;"> left   </div>
+                        <div class="ct-event ct-event-top    ct-anim-fade-html ct-e-dubai-start"      style="left: 49.4%;"> joined </div>
+                        <div class="ct-event ct-event-top    ct-anim-fade-html ct-e-dubai-end"        style="left: 71.8%;"> left   </div>
+                        <div class="ct-event ct-event-top    ct-anim-fade-html ct-e-kinnarps-start"   style="left: 76.8%;"> joined </div>
+                        <div class="ct-event ct-event-bottom ct-anim-fade-html ct-e-jfl-start"        style="left: 87.5%;"> joined </div>
+
+                        <!-- Production / main-line badge -->
+                        <div class="ct-prod-badge">
+                            <i data-lucide="rocket" class="h-3.5 w-3.5"></i>
+                            <span>career</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legend -->
+                <div class="ct-legend">
+                    <span><i class="ct-swatch ct-swatch-employed"></i> Full-time</span>
+                    <span><i class="ct-swatch ct-swatch-freelance"></i> Freelance</span>
+                    <span><i class="ct-swatch ct-swatch-live"></i> In progress</span>
+                    <span class="ct-legend-hint">Detailed history below</span>
+                </div>
+            </div>
+
             <div class="space-y-4">
                 <article class="reveal exp-row">
                     <img src="assets/joseforland-logo.png" alt="Jose For Land logo" class="exp-logo" />
@@ -750,6 +993,68 @@
             <div class="reveal text-center mb-12 max-w-2xl mx-auto">
                 <h2 class="section-title">Let's build something solid</h2>
                 <p class="section-sub mx-auto">Actively exploring <strong class="text-neutral-800 dark:text-neutral-200">Software Development Manager</strong>, <strong class="text-neutral-800 dark:text-neutral-200">Technical Consultant</strong>, and <strong class="text-neutral-800 dark:text-neutral-200">CTO</strong> roles — full-time, fractional, or consulting engagements welcome.</p>
+            </div>
+
+            <!-- Contact form: send via mailto with all fields composed into the body -->
+            <form id="contact-form" class="reveal contact-form" novalidate>
+                <div class="contact-form-grid">
+                    <label class="contact-field">
+                        <span class="contact-field-label">Name</span>
+                        <input type="text" name="name" placeholder="e.g. Merlin Jose" autocomplete="name" required />
+                    </label>
+                    <label class="contact-field">
+                        <span class="contact-field-label">Email</span>
+                        <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required />
+                    </label>
+                    <label class="contact-field">
+                        <span class="contact-field-label">Contact Number</span>
+                        <input type="tel" name="phone" placeholder="+971 54 ..." autocomplete="tel" required />
+                    </label>
+                </div>
+                <label class="contact-field contact-field-full">
+                    <span class="contact-field-label">Tell me your idea to build</span>
+                    <textarea name="idea" rows="5" placeholder="What are you working on? Domain, stack, scale, where you'd want me to plug in…" required></textarea>
+                </label>
+                <div class="contact-form-actions">
+                    <button type="submit" class="contact-submit">
+                        <i data-lucide="send" class="h-4 w-4"></i>
+                        <span>Send your idea</span>
+                    </button>
+                    <p class="contact-form-note" id="contact-form-note" aria-live="polite"></p>
+                </div>
+
+                <!-- Ready-to-send panel — appears after a valid submission with 3 reliable options -->
+                <div id="contact-ready" class="contact-ready" hidden>
+                    <div class="contact-ready-head">
+                        <i data-lucide="check-circle-2" class="h-5 w-5"></i>
+                        <div>
+                            <div class="contact-ready-title">Your message is ready — pick how to send it</div>
+                            <div class="contact-ready-sub">Already copied to your clipboard ✓ Paste it anywhere if you prefer.</div>
+                        </div>
+                    </div>
+                    <div class="contact-ready-actions">
+                        <a id="contact-gmail" href="#" target="_blank" rel="noopener" class="contact-ready-btn contact-ready-btn-primary">
+                            <i data-lucide="mail" class="h-4 w-4"></i>
+                            <span>Open in Gmail</span>
+                        </a>
+                        <a id="contact-mailto" href="#" class="contact-ready-btn">
+                            <i data-lucide="app-window" class="h-4 w-4"></i>
+                            <span>Open Email app</span>
+                        </a>
+                        <button type="button" id="contact-copy" class="contact-ready-btn">
+                            <i data-lucide="clipboard" class="h-4 w-4"></i>
+                            <span>Copy message</span>
+                        </button>
+                    </div>
+                    <details class="contact-ready-preview">
+                        <summary>Preview the message</summary>
+                        <pre id="contact-preview"></pre>
+                    </details>
+                </div>
+            </form>
+
+            <div class="reveal contact-divider">
+                <span>or reach me directly</span>
             </div>
 
             <div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
